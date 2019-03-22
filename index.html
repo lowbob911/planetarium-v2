@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta property="og:image" content="http://planetariy.by/img/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Детский планетарий | Минск</title>
+  <link rel="shortcut icon" type="image/x-icon" href="images/astronaut.png" />
+
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no"/>
+  <link rel="stylesheet" href="css/grid.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/booking.css"/>
+  <link rel="stylesheet" href="css/jquery.fancybox.css"/>
+  <link rel="stylesheet" href="css/owl-carousel.css"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Seymour+One" rel="stylesheet">
+
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery-migrate-1.2.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6df5e97a3e63c14374e04fcfc51c6fe690b291f09dbff504c68cc11cf8b20fa6&amp;lang=ru_RU&amp;scroll=false&amp;id=map"></script>
+  <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6df5e97a3e63c14374e04fcfc51c6fe690b291f09dbff504c68cc11cf8b20fa6&amp;lang=ru_RU&amp;scroll=false&amp;id=map-acc"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131543443-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-131543443-1');
+  </script>
+
+  <script src='js/device.min.js'></script>
+</head>
+
+<body>
+<div class="page">
+  <!--========================================================
+                            HEADER
+  =========================================================-->
+  <header class="vide">
+    <div class="container vide_content">
+      <h2 style="font-family: 'Seymour One', sans-serif; text-shadow: -1px 0 black, 0 1px black, 3px 0 black, 0 -1px black;">Бесплатный планетарий в Минске</h2>
+
+      <div class="booking-form_controls">
+        <a href="#" class="btn btn-primary btn-lg reg-btn" data-toggle="modal" data-target="#registerModal">Записаться на сеанс!</a>
+
+        <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Запись на сеанс</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSduhf1olYyTIZ9u89UlGY7vxCnaUVdxzz-js0tIpnGTSvyS2w/viewform?embedded=true" width="640" height="1184" frameborder="0" marginheight="0" marginwidth="0">Загрузка...</iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--========================================================
+                            CONTENT
+  =========================================================-->
+  <main>
+
+    <section class="well center">
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+            <div class="video-icon">
+              <img class="icon-img" src="images/360.png" />
+            </div>
+            <hr/>
+            <h3>Видео в полнокупольном формате на 360°</h3>
+          </div>
+          <div class="col-4">
+            <div class="video-icon">
+              <img class="icon-img" src="images/earth.png" />
+            </div>
+            <hr/>
+            <h3>Уникальный фильм о нашем мире</h3>
+          </div>
+          <div class="col-4">
+            <div class="video-icon">
+              <img class="icon-img" src="images/camera.png" />
+            </div>
+            <hr/>
+            <h3>Фотозона с тематическими героями</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="well">
+      <div class="container center">
+        <h2>Ответы на вопросы</h2>
+        <hr/>
+
+        <div id="accordion">
+          <div class="card">
+              <div class="card-header" id="headingOne">
+                <a class="collapse-bar collapsed" href="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                <h5 class="mb-0">
+                    Что в программе и как долго она длится?
+                </h5>
+                </a>
+              </div>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body">
+                Мероприятие разделено на несколько этапов: видеосеанс в куполе, интерактивное общение, по желанию фотозона и чаепитие. Все это займет 50-60 минут.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <a class="collapse-bar collapsed" href="" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <h5 class="mb-0">
+                Если ребенку меньше 5 лет, можно записывать его на сеанс?
+              </h5>
+              </a>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div class="card-body">
+                Жестких ограничений на это нет, но нужно учитывать, что программа мероприятия рассчитана на более взрослую аудиторию.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <a class="collapse-bar collapsed" href="" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <h5 class="mb-0">
+                  Как добраться до места проведения?
+                </h5>
+              </a>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="card-body">
+                Адрес: Минск, Яна Райниса, 6, здание воскресной школы церкви «Свет Евангелия».
+                <div class="row">
+                  <div class="col-12">
+                    <div id="map-acc" class="accordion-map"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFour">
+              <a class="collapse-bar collapsed" href="" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                <h5 class="mb-0">
+                  Есть ли поблизости парковка для автомобилей?
+                </h5>
+              </a>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="card-body">
+                Перед зданием и за ним имеются бесплатные парковки.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+              <div class="card-header" id="headingFive">
+                <a class="collapse-bar collapsed" href="" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  <h5 class="mb-0">
+                    Как убедиться, что сеанс состоится?
+                  </h5>
+                </a>
+              </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="card-body">
+                В случае отмены сеанса, мы проинформируем вас по оставленному в заявке контактному телефону. По умолчанию считается, что сеанс состоится.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="thumb-container well">
+      <div class="item">
+        <a class="lazy-img thumb" style="padding-bottom:65.17073170731707%;" href="images/photos/1.jpg">
+          <img data-src="images/photos/1.jpg" src="#" alt=""/>
+          <span class="thumb_overlay"></span>
+        </a>
+      </div>
+      <div class="item">
+        <a class="lazy-img thumb" style="padding-bottom:65.17073170731707%;" href="images/photos/2.jpg">
+          <img data-src="images/photos/2.jpg" src="#" alt=""/>
+          <span class="thumb_overlay"></span>
+        </a>
+      </div>
+      <div class="item">
+        <a class="lazy-img thumb" style="padding-bottom:65.17073170731707%;" href="images/photos/3.jpg">
+          <img data-src="images/photos/3.jpg" src="#" alt=""/>
+          <span class="thumb_overlay"></span>
+        </a>
+      </div>
+      <div class="item">
+        <a class="lazy-img thumb" style="padding-bottom:65.17073170731707%;" href="images/photos/4.jpg">
+          <img data-src="images/photos/4.jpg" src="#" alt=""/>
+          <span class="thumb_overlay"></span>
+        </a>
+      </div>
+      <div class="item">
+        <a class="lazy-img thumb" style="padding-bottom:65.17073170731707%;" href="images/photos/5.jpg">
+          <img data-src="images/photos/5.jpg" src="#" alt=""/>
+          <span class="thumb_overlay"></span>
+        </a>
+      </div>
+    </section>
+    <section class="thumb-container">
+      <div class="item">
+        <a class="lazy-img thumb" style="padding-bottom:65.17073170731707%;" href="images/photos/6.jpg">
+          <img data-src="images/photos/6.jpg" src="#" alt=""/>
+          <span class="thumb_overlay"></span>
+        </a>
+      </div>
+      <div class="item">
+        <a class="lazy-img thumb" style="padding-bottom:65.17073170731707%;" href="images/photos/7.jpg">
+          <img data-src="images/photos/7.jpg" src="#" alt=""/>
+          <span class="thumb_overlay"></span>
+        </a>
+      </div>
+      <div class="item">
+        <a class="lazy-img thumb" style="padding-bottom:65.17073170731707%;" href="images/photos/8.jpg">
+          <img data-src="images/photos/8.jpg" src="#" alt=""/>
+          <span class="thumb_overlay"></span>
+        </a>
+      </div>
+      <div class="item">
+        <a class="lazy-img thumb" style="padding-bottom:65.17073170731707%;" href="images/photos/9.jpg">
+          <img data-src="images/photos/9.jpg" src="#" alt=""/>
+          <span class="thumb_overlay"></span>
+        </a>
+      </div>
+      <div class="item">
+        <a class="lazy-img thumb" style="padding-bottom:65.17073170731707%;" href="images/photos/10.jpg">
+          <img data-src="images/photos/10.jpg" src="#" alt=""/>
+          <span class="thumb_overlay"></span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!--========================================================
+                            FOOTER
+  =========================================================-->
+  <footer>
+    <div class="parallax" data-url="images/parallax2.jpg" data-mobile="true" data-speed="0.5 " data-direction="inverted">
+      <div class="well4">
+        <div class="container center wow fadeInUp" data-wow-delay="0.2s">
+          <h2>Карта</h2>
+          <hr/>
+          <div class="row">
+            <div class="col-12">
+              <div id="map" class="main-map"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+</div>
+
+<script src="js/script.js"></script>
+<!-- coded by Diversant -->
+</body>
+</html>
