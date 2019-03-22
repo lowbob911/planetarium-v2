@@ -886,3 +886,34 @@ footer * + .copyright {
   display: inline-block;
   max-width: unset!important;
 }
+
+.reg-frame {
+  width: 640px;
+  height: 800px;
+}
+
+@media (max-width: 960px) {
+  .reg-frame{
+    width: 350px;
+    height: 700px;
+  }
+}
+
+@media (max-width: 450px) {
+  .reg-frame{
+    width: 450px;
+    height: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .usp-label{
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 768px) {
+  .usp-label{
+    font-size: 22px;
+  }
+}
