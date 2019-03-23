@@ -146,7 +146,6 @@ strong {
 
 .page {
   overflow: hidden;
-  min-height: 500px;
 }
 .lt-ie9 .page {
   min-width: 1200px;
@@ -309,7 +308,7 @@ img + .brand_name {
 /*==================     Icons     ======================*/
 .video-icon{
   width:250px;
-  margin: auto;
+  margin: 10px auto auto;
 }
 
 .icon-img{
@@ -924,11 +923,11 @@ footer * + .copyright {
 
 @media (max-width: 768px) {
   .usp-label{
-    font-size: 28px;
+    font-size: 24px;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .usp-label{
     font-size: 22px;
   }
