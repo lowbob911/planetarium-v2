@@ -1,7 +1,8 @@
 @import url(animate.css);
 @import url(hotel-pictograms.css);
-@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
-@import url(//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);
+@import url(https://fonts.googleapis.com/css?family=Comfortaa);
 /*========================================================
                       Main Styles
 =========================================================*/
@@ -193,7 +194,7 @@ strong {
 }
 
 * + .row {
-  margin-top: 81px;
+  margin-top: 50px;
 }
 
 * + .off1 {
@@ -605,7 +606,7 @@ label.invalid .error {
                      HEADER  Section
 ==========================================================*/
 header {
-  background: url(../images/space-5.jpg);
+  background: url(../images/bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
@@ -682,7 +683,7 @@ main {
 }
 
 .well4 {
-  padding: 98px 0 33px;
+  padding: 30px;
 }
 
 .well5 {
@@ -837,7 +838,7 @@ footer * + .copyright {
 @media (max-width: 767px) {
   .main-map{
     height: 400px;
-    margin: 0 auto 50px auto;
+    margin: 0 auto;
     width: 100%;
   }
 
@@ -930,5 +931,30 @@ footer * + .copyright {
 @media (min-width: 769px) {
   .usp-label{
     font-size: 22px;
+  }
+}
+
+.form {
+  position: relative;
+  padding-top: 92%;
+}
+@media (max-width: 800px) {
+  .form {
+    padding-top: 120%;
+  }
+}
+@media (max-width: 440px) {
+  .form {
+    padding-top: 220%;
+  }
+}
+@media (max-width: 400px) {
+  .form {
+    padding-top: 260%;
+  }
+}
+@media (max-width: 330px) {
+  .form {
+    padding-top: 360%;
   }
 }

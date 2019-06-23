@@ -1,0 +1,88 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+  <meta property="og:image" content="http://planetariy.by/img/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Бесплатный планетарий | Минск</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../images/astronaut.png" />
+
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no"/>
+  <link rel="stylesheet" href="../css/grid.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/booking.css"/>
+  <link rel="stylesheet" href="../css/jquery.fancybox.css"/>
+  <link rel="stylesheet" href="../css/owl-carousel.css"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Seymour+One" rel="stylesheet">
+
+  <script src="/js/jquery.js"></script>
+  <script src="/js/jquery-migrate-1.2.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6df5e97a3e63c14374e04fcfc51c6fe690b291f09dbff504c68cc11cf8b20fa6&amp;lang=ru_RU&amp;scroll=false&amp;id=map"></script>
+  <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6df5e97a3e63c14374e04fcfc51c6fe690b291f09dbff504c68cc11cf8b20fa6&amp;lang=ru_RU&amp;scroll=false&amp;id=map-acc"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131543443-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-131543443-1');
+  </script>
+  <script>
+      $(function() {
+          $('.js-smooth-scroll').on('click.smoothscroll', function(e) {
+              e.preventDefault();
+              var $scrollTo = $($.attr(this, 'href'));
+              if ($scrollTo.length) {
+                  $('html, body').animate({
+                      scrollTop: $scrollTo.offset().top
+                  }, 2000);
+              }
+          });
+
+          $('.ph-btn').click(function() { gtag('event', 'photosClick'); });
+          $('.reg-btn').click(function() { gtag('event', 'formClick'); });
+          $('.card').click(function() { gtag('event', 'questionClick'); });
+          $('.thumb-container .item').click(function() { gtag('event', 'photoClick'); });
+      });
+  </script>
+
+  <script src='../js/device.min.js'></script>
+</head>
+
+<body>
+<div class="page">
+
+  <header class="vide">
+    <div class="container vide_content">
+      <h2 style="font-family: 'Comfortaa', sans-serif; text-shadow: -1px 0 black, 0 1px black, 2px 0 black, 0 -1px black;">Фотографии с показов</h2>
+    </div>
+  </header>
+  <main>
+    <div class="container mt-2">
+      <div class="row">
+        <div class="col-12 text-center mt-2">
+          <a class="btn btn-info btn-lg reg-btn" href="https://drive.google.com/open?id=13YEQzynh31Y93OapwjAytpAZEDvowouS">Браслав (16 Июня)</a>
+        </div>
+        <div class="col-12 text-center mt-2">
+          <a class="btn btn-info btn-lg reg-btn" href="https://drive.google.com/drive/folders/1qxTCYGhZ4H2QQOC-szTvieQZxuLVDq_G?usp=sharing">Шарковщина (16 Июня)</a>
+        </div>
+        <div class="col-12 text-center mt-2">
+          <a class="btn btn-info btn-lg reg-btn" href="https://photos.app.goo.gl/UVPPYcXpUmFtGU6Q6">Фотографии (12-13 апреля)</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="../js/script.js"></script>
+<!-- coded by Diversant -->
+</body>
+</html>

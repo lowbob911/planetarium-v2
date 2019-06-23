@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿
+<!DOCTYPE html>
+<html>
 <head>
   <meta property="og:image" content="http://planetariy.by/img/logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Детский планетарий | Минск</title>
+  <title>Бесплатный планетарий | Минск</title>
   <link rel="shortcut icon" type="image/x-icon" href="images/astronaut.png" />
 
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -34,42 +35,40 @@
       gtag('js', new Date());
       gtag('config', 'UA-131543443-1');
   </script>
+  <script>
+      $(function() {
+          $('.js-smooth-scroll').on('click.smoothscroll', function(e) {
+              e.preventDefault();
+              var $scrollTo = $($.attr(this, 'href'));
+              if ($scrollTo.length) {
+                  $('html, body').animate({
+                      scrollTop: $scrollTo.offset().top
+                  }, 2000);
+              }
+          });
+
+          $('.ph-btn').click(function() { gtag('event', 'photosClick'); });
+          $('.reg-btn').click(function() { gtag('event', 'formClick'); });
+          $('.card').click(function() { gtag('event', 'questionClick'); });
+          $('.thumb-container .item').click(function() { gtag('event', 'photoClick'); });
+      });
+  </script>
 
   <script src='js/device.min.js'></script>
 </head>
 
 <body>
 <div class="page">
-  <!--========================================================
-                            HEADER
-  =========================================================-->
+
   <header class="vide">
     <div class="container vide_content">
-      <h2 style="font-family: 'Seymour One', sans-serif; text-shadow: -1px 0 black, 0 1px black, 2px 0 black, 0 -1px black;">Бесплатный планетарий в Минске</h2>
-
+      <h2 style="font-family: 'Comfortaa', sans-serif; text-shadow: -1px 0 black, 0 1px black, 2px 0 black, 0 -1px black;">Бесплатный  планетарий в&nbsp;Минске</h2>
       <div class="booking-form_controls">
-        <a class="btn btn-info btn-lg reg-btn" href="https://drive.google.com/open?id=1Sv96JXNVjwjHdkr1lfMjsFMej7IvIKJ6"><i class="fas fa-angle-right" style="margin-top: 8px;"></i>  Фото с показа в Березино  <i class="fas fa-angle-left" style="margin-top: 8px;"></i></a>
-        <!--<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
-          <!--<div class="modal-dialog" role="document">-->
-            <!--<div class="modal-content">-->
-              <!--<div class="modal-header">-->
-                <!--<h5 class="modal-title" id="exampleModalLabel">Запись на сеанс</h5>-->
-                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-                  <!--<span aria-hidden="true">&times;</span>-->
-                <!--</button>-->
-              <!--</div>-->
-              <!--<div class="modal-body">-->
-                <!--<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSduhf1olYyTIZ9u89UlGY7vxCnaUVdxzz-js0tIpnGTSvyS2w/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" class="reg-frame">Загрузка...</iframe>-->
-              <!--</div>-->
-            <!--</div>-->
-          <!--</div>-->
-        <!--</div>-->
+        <a class="btn btn-info btn-lg ph-btn" href="./pages/photos.html">Фотографии с показов</a>
       </div>
     </div>
   </header>
-  <!--========================================================
-                            CONTENT
-  =========================================================-->
+
   <main>
 
     <section class="well center">
@@ -87,7 +86,7 @@
               <img class="icon-img" src="images/film.png" />
             </div>
             <hr/>
-            <h5 class="usp-label">Уникальный фильм о нашем мире</h5>
+            <h5 class="usp-label">Уникальный фильм о&nbsp;нашем мире</h5>
           </div>
           <div class="col-md-4 col-sm-12">
             <div class="video-icon">
@@ -102,18 +101,17 @@
 
     <section class="well">
       <div class="container center">
-        <h2>Ответы на вопросы</h2>
+        <h2>Ответы на&nbsp;вопросы</h2>
         <hr/>
-
         <div id="accordion">
           <div class="card">
-              <div class="card-header" id="headingOne">
-                <a class="collapse-bar collapsed" href="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            <div class="card-header" id="headingOne">
+              <a class="collapse-bar collapsed" href="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                 <h5 class="mb-0">
-                    Что в программе и как долго она длится?
+                  Что в программе и как долго она длится?
                 </h5>
-                </a>
-              </div>
+              </a>
+            </div>
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
               <div class="card-body">
                 Мероприятие разделено на несколько этапов: видеосеанс в куполе, интерактивное общение, по желанию фотозона и чаепитие. Все это займет 50-60 минут.
@@ -123,9 +121,9 @@
           <div class="card">
             <div class="card-header" id="headingTwo">
               <a class="collapse-bar collapsed" href="" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              <h5 class="mb-0">
-                Если ребенку меньше 5 лет, можно записывать его на сеанс?
-              </h5>
+                <h5 class="mb-0">
+                  Если ребенку меньше 5 лет, можно записывать его на сеанс?
+                </h5>
               </a>
             </div>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
@@ -168,13 +166,13 @@
             </div>
           </div>
           <div class="card">
-              <div class="card-header" id="headingFive">
-                <a class="collapse-bar collapsed" href="" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                  <h5 class="mb-0">
-                    Как убедиться, что сеанс состоится?
-                  </h5>
-                </a>
-              </div>
+            <div class="card-header" id="headingFive">
+              <a class="collapse-bar collapsed" href="" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                <h5 class="mb-0">
+                  Как убедиться, что сеанс состоится?
+                </h5>
+              </a>
+            </div>
             <div id="collapseFive" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
               <div class="card-body">
                 В случае отмены сеанса, мы проинформируем вас по оставленному в заявке контактному телефону. По умолчанию считается, что сеанс состоится.
@@ -182,9 +180,7 @@
             </div>
           </div>
         </div>
-
       </div>
-
     </section>
 
     <section class="thumb-container well">
@@ -260,8 +256,11 @@
     <div class="parallax" data-url="images/parallax2.jpg" data-mobile="true" data-speed="0.5 " data-direction="inverted">
       <div class="well4">
         <div class="container center wow fadeInUp" data-wow-delay="0.2s">
-          <h2>Карта</h2>
+          <h2>Как добраться</h2>
           <hr/>
+          <div class="col-12">
+            <p>Минск, Яна Райниса, 6, здание воскресной школы церкви «Свет Евангелия»</p>
+          </div>
           <div class="row">
             <div class="col-12">
               <div id="map" class="main-map"></div>
