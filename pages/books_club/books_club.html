@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Библиотека</title>
+    <style>
+        body {
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            text-align: left;
+            background-color: #fff;
+            position: absolute;
+            top: 5%;
+            bottom: 20%;
+            left: 15%;
+            right: 15%;
+            min-width:800px;
+        }
+        *, ::after, ::before {
+            box-sizing: border-box;
+        }
+        h4 {
+            margin-top:0;
+            margin-bottom:.5rem;
+            font-family:inherit;
+            font-weight:500;
+            line-height:1.2;
+            color:inherit;
+            font-size:1.5rem;
+            display: block;
+            margin-block-start: 1.33em;
+            margin-block-end: 1.33em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+
+        img{
+            width : auto;
+            height: 200px;
+        }
+        .col-md-8, .col-md-4{position:relative;width:100%;min-height:1px;padding-right:15px;padding-left:15px}
+
+
+        p{
+            padding:0;
+            margin:0;
+            font-size:0.8rem;
+            color:gray;
+        }
+        p.author {
+            font-size:1.1rem;
+            color:black;
+        }
+        p.name {
+            color:black;
+            font-weight: bold;
+        }
+
+        .row {
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+        .col-md-2 {
+            width: 200px;
+            position: relative;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        .form-control{
+            display: block;
+            width: 100%;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-image: none;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        }
+        a {
+            font-size: 0.8rem;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+<h4>Библиотека</h4>
+<button type="button" class="btn btn-primary" id="addBookOpenBtn">
+    Добавить книгу
+</button><br>
+<!-- Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="inputName">Название</label>
+                    <input type="email" class="form-control" id="inputName">
+                </div>
+                <div class="form-group">
+                    <label for="inputAuthor">Автор</label>
+                    <input type="email" class="form-control" id="inputAuthor">
+                </div>
+                <div class="form-group">
+                    <label for="inputOwner">Владелец</label>
+                    <input type="email" class="form-control" id="inputOwner">
+                </div>
+                <div class="form-group">
+                    <label for="inputImgUrl">URL обложки</label>
+                    <input type="email" class="form-control" id="inputImgUrl">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                <button type="button" class="btn btn-primary" id="addBookBtn">Добавить</button>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+<div class="row">
+    <div class="col-md-12">
+        <input type="text" id="search" class="form-control" placeholder="Найти по автору или названию">
+    </div>
+</div><br>
+<div class="row" id="parent">
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script>
+    var serverUrl = 'http://127.0.0.1:8000/booksclub';
+
+    function deleteBook(id, el){
+        if(confirm("Вы уверены, что хотите удалить книгу?")){
+            $.ajax({
+                url: `${serverUrl}/books/${id}`,
+                type: "DELETE",
+                success: function(){
+                    el.closest('div').remove();
+                }
+            });
+        }
+    }
+
+    $(document).ready(function(){
+        $.ajax({
+            url: `${serverUrl}/books/`,
+            dataType: 'json',
+            success: function(data){
+                data.forEach(book => {
+                    $('#parent').append(`<div class="col-md-2 box bio o_khl"><center><img src="${book.img_url}"/>`+
+                        `<center>`+
+                        `<p class="author">${book.author}</p>`+
+                        `<p class="name">${book.name}</p>`+
+                        `<p>${book.owner}</p>`+
+                        `<button id="tets" class="deleteBtn" style="color: darkred;" onclick="deleteBook('${book.id}', this)">X</button>`+
+                        `</center>`+
+                        `</div>`)
+                })
+            }
+        });
+
+        $("#search").on('input',function(){
+            var matcher = new RegExp($(this).val(), 'gi');
+            $('.box').show().not(function(){
+                return matcher.test($(this).find('.author, .name').text())
+            }).hide();
+        });
+
+        $("#button").click(function() {
+            console.log(this);
+        });
+
+        $("#addBookOpenBtn").click(function() {
+            $('#addModal').modal();
+        });
+
+        $("#addBookBtn").click(function (){
+            $.ajax({
+                url: `${serverUrl}/books/`,
+                type: "POST",
+                dataType: 'json',
+                data: {
+                    name: $('#inputName').val(),
+                    author: $('#inputAuthor').val(),
+                    owner: $('#inputOwner').val(),
+                    img_url: $('#inputImgUrl').val()
+                },
+                success: function(data){
+                    $('#parent').append(`<div class="col-md-2 box bio o_khl"><center><img src="${data.img_url}" class="" alt="">`+
+                        `<center>`+
+                        `<p class="author">${data.author}</p>`+
+                        `<p class="name">${data.name}</p>`+
+                        `<p>${data.owner}</p>`+
+                        `<input type="hidden" value="${data.id}"/>`+
+                        `<button id="tets" class="deleteBtn" style="color: darkred;" onclick="deleteBook('${data.id}', this)">X</button>`+
+                        `</center>`+
+                        `</div>`);
+
+                    $('#addModal').modal('hide');
+                }
+            });
+        });
+    })
+</script>
+</body>
+
+</html>
