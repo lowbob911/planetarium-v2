@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/planetar/public_html/
+    - export DEPLOYPATH=/hosting1/planetariby/public_html/
     - /bin/cp -r * $DEPLOYPATH
