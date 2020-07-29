@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/hosting1/planetariby/public_html/
+    - export DEPLOYPATH=/hosting1/evangelieby/planetariby/
     - /bin/cp -r * $DEPLOYPATH
